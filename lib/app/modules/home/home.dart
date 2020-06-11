@@ -23,7 +23,8 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
+    return
+      Stack(
       children: <Widget>[
         _background(),
         Scaffold(
@@ -65,6 +66,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
     return AppBar(
       backgroundColor: Color(0x00000000),
       bottom: TabBar(
+        isScrollable: true,
         indicatorSize: TabBarIndicatorSize.tab,
         indicator: new BubbleTabIndicator(
           indicatorHeight: 40.0,
@@ -73,12 +75,12 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
           tabBarIndicatorSize: TabBarIndicatorSize.tab,
         ),
         tabs: widget.tabs,
-        isScrollable: true,
         unselectedLabelColor: Colors.grey,
         labelColor: Colors.white,
         controller: _tabController,
         labelStyle: TextStyle(fontSize: 20,fontWeight: FontWeight.bold, fontFamily: "Quantico"),
       ),
+      leading: Container(),
     );
   }
 }
